@@ -10,13 +10,15 @@ import java.util.Observer;
 public class EggCounter implements Observer
 {
     int Counter = 0;
-    public void update(Observable chicken, Object o) {
+    public void update(Observable chicken, Object o)
+    {
+        String name = (((Chicken) chicken).name);
         {
             LinkedList<Chicken> ChickenList = new LinkedList<>();
             ChickenList.add(((Chicken) chicken));
             for (Chicken c : ChickenList)
             {
-                if (c.laidEgg() && (c.name.equals(((Chicken) chicken).name)))
+                if (c.laidEgg() && (c.name.equals(name)))
                 {
                     Counter++;
                 }
